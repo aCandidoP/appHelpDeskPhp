@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -41,7 +46,12 @@
                 </div>
                 <?php if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
                   <div class="text-danger">
-                  Usuáro ou senha inválidos                     
+                    Usuáro ou senha inválidos                     
+                  </div>                    
+                <?php } ?>
+                <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
+                  <div class="text-warning">
+                    Faça o login antes de acessar o sistema                     
                   </div>                    
                 <?php } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>

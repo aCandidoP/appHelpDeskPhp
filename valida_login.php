@@ -1,5 +1,8 @@
 <?php 
 
+session_start();
+
+
 // Variável autenticação
 $autenticarUsuario = false;
 
@@ -9,6 +12,7 @@ $usuariosApp = array(
     array('email' => 'user@teste.com.br', 'senha' => 'abcdef')
 );
 
+
 foreach ($usuariosApp as $user) {
    if ($user["email"] == $_POST["email"] && $user["senha"] == $_POST["senha"]) {
         $autenticarUsuario = true;
@@ -17,7 +21,9 @@ foreach ($usuariosApp as $user) {
 
 if ($autenticarUsuario) {
     echo "Usuário autenticado !";
+    $_SESSION['autenticado'] = "SIM";
 } else {
+    $_SESSION['autenticado'] = "NAO";
     header("Location: index.php?login=erro");
 }
 
