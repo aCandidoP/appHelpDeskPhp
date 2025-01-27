@@ -51,7 +51,7 @@
                 <?php } ?>
                 <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
                   <div class="text-warning">
-                    Faça o login antes de acessar o sistema                     
+                    <p class="mt-1">Faça o login antes de acessar o sistema<p>                     
                   </div>                    
                 <?php } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
