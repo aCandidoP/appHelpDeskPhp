@@ -5,8 +5,8 @@
 <?php 
 
 $chamados = array();
-$arquivo = "/var/www/html/appHelpDesk/arquivo.hd";
-fopen($arquivo, "r");
+$arquivo = fopen("/var/www/html/appHelpDesk/arquivo.hd", "r");
+
 
 while(!feof($arquivo)) {
   $registro = fgets($arquivo);
@@ -73,9 +73,9 @@ fclose($arquivo);
 
                 <div class="card mb-3 bg-light">
                   <div class="card-body">
-                    <h5 class="card-title"><?php $chamado_dados[0] ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?php $chamado_dados[1] ?></h6>
-                    <p class="card-text"><?php $chamado_dados[2] ?></p>
+                    <h5 class="card-title"><?= $chamado_dados[0] ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[1] ?></h6>
+                    <p class="card-text"><?= $chamado_dados[2] ?></p>
 
                   </div>
                 </div>
